@@ -1,0 +1,86 @@
+<div id="footer-bar" class="footer-bar footer-bar-detached">
+<a [routerLink]="['/home']" routerLinkActive="active-nav"><i class="bi bi-house-fill font-16"></i><span>Home</span></a>
+<a [routerLink]="['/profile']" routerLinkActive="active-nav"><i class="bi bi-person-lines-fill font-17"></i><span>Profile</span></a>
+<button data-bs-toggle="offcanvas" data-bs-target="#addx" style="background-color: white; border: 0; color: #818181;"><i class="bi bi-plus-circle-fill font-24"></i><span></span></button>
+<a [routerLink]="['/messages']" routerLinkActive="active-nav"><i class="bi bi-send-check-fill font-16"></i><span>Messages</span></a>
+<button data-bs-toggle="offcanvas" data-bs-target="#menu-main" style="background-color: white; border: 0; color: #818181;"><i class="bi bi-list font-24"></i><span></span></button>
+</div>
+
+    <div class="offcanvas offcanvas-bottom rounded-m offcanvas-detached bg-theme" id="addx" style="bottom: calc(100px + env(safe-area-inset-bottom));">
+    <div class="content">
+    <div class="d-flex pb-2">
+    <div class="align-self-center">
+    <h5 class="mb-n1 font-12 color-highlight font-700 text-uppercase pt-1">Just tap and</h5>
+    <h1 class="font-700">Add Content</h1>
+    </div>
+    <div class="align-self-center ms-auto">
+    <a href="#" data-bs-dismiss="offcanvas" class="icon icon-m"><i class="bi bi-x-circle-fill color-red-dark font-18 me-n4"></i></a>
+    </div>
+    </div>
+    <div class="list-group list-custom list-group-m rounded-xs list-group-flush bg-theme">
+    <a href="#" class="list-group-item">
+    <i class="bi bi-facebook color-facebook font-16"></i>
+    <div>Live</div>
+    <i class="bi bi-chevron-right pe-1"></i>
+    </a>
+    <button data-bs-toggle="offcanvas" data-bs-target="#addpost" class="list-group-item">
+    <i class="bi bi-twitter color-twitter font-16"></i>
+    <div>Post</div>
+    <i class="bi bi-chevron-right pe-1"></i>
+    </button>
+    <a href="#" class="list-group-item">
+    <i class="bi bi-linkedin color-linkedin font-16"></i>
+    <div>Course</div>
+    <i class="bi bi-chevron-right pe-1"></i>
+    </a>
+    <a href="#" class="list-group-item">
+    <i class="bi bi-pinterest color-pinterest font-16"></i>
+    <div>Event</div>
+    <i class="bi bi-chevron-right pe-1"></i>
+    </a>
+    <a href="#" class="list-group-item">
+    <i class="bi bi-pinterest color-pinterest font-16"></i>
+    <div>Report Content</div>
+    <i class="bi bi-chevron-right pe-1"></i>
+    </a>
+    </div>
+    </div>
+    </div>
+
+
+    <div class="offcanvas offcanvas-bottom rounded-m offcanvas-detached bg-theme" id="addpost" style="bottom: calc(300px + env(safe-area-inset-bottom));">
+    <div class="content">
+    <div class="d-flex pb-2">
+    <div class="align-self-center">
+    <h5 class="mb-n1 font-12 color-highlight font-700 text-uppercase pt-1">Shere ur content</h5>
+    <h1 class="font-700">Add Post</h1>
+    </div>
+    <div class="align-self-center ms-auto">
+    <a href="#" data-bs-dismiss="offcanvas" class="icon icon-m"><i class="bi bi-x-circle-fill color-red-dark font-18 me-n4"></i></a>
+    </div>
+    </div>
+    <div class="list-group list-custom list-group-m rounded-xs list-group-flush bg-theme">
+            <div class="form-group">
+                <label for="content">Content</label>
+                <textarea class="form-control" id="content" name="content" required [(ngModel)]="post.content" name="content"></textarea>
+    			<script src="assets/js/tinymce.min.js"></script>
+    			<script>
+    			tinymce.init({
+    			    selector: '#content',
+    			    plugins: 'advlist autolink lists link image charmap print preview anchor code fullscreen',
+    			    toolbar: 'undo redo | formatselect | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
+    			});
+    			</script>
+            </div>
+            <div class="form-group">
+                <label for="photo">Photo</label>
+                <input type="file" class="form-control" id="photo" name="photo">
+            </div>
+            <div class="form-group">
+                <label for="video">Video</label>
+                <input type="file" class="form-control" id="video" name="video">
+            </div>
+            <button (click)="postx()" class="btn btn-primary">Post</button>
+    </div>
+    </div>
+    </div>
